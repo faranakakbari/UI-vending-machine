@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+html, body, #root {
+  height: 100%;
+  direction: rtl;
+}
+
+* {
+  font-family: 'Vazirmatn', system-ui, sans-serif;
+}
+
+:root {
+  --sidebar-bg: #0f172a;
+  --sidebar-width: 230px;
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --success: #16a34a;
+  --warning: #ea580c;
+  --danger: #dc2626;
+  --yellow: #ca8a04;
+  --muted: #64748b;
+  --text: #0f172a;
+  --text-secondary: #475569;
+  --radius: 10px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* RTL table */
+table { direction: rtl; }
+
+/* Number font - use latin digits */
+.ltr-num { direction: ltr; display: inline-block; }
+
+/* Smooth transitions */
+.transition-all { transition: all 0.15s ease; }
+
+/* Map styles */
+.map-container { position: relative; overflow: hidden; background: #e8eef4; }
+
+/* Driver marker pulse */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes live-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.live-dot { animation: live-blink 1.5s ease-in-out infinite; }
+.pulse-ring { animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }
+
+/* Sidebar active item */
+.nav-item-active {
+  background: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+  border-right: 3px solid #60a5fa;
+}
+
+/* Hide scrollbar but keep scroll */
+.hide-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+.hide-scroll::-webkit-scrollbar { display: none; }
+
+/* Progress bar animation */
+@keyframes progress-fill {
+  from { width: 0; }
+}
+
+/* Toast */
+@keyframes slide-in-right {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.toast-enter { animation: slide-in-right 0.3s ease forwards; }
